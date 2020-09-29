@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_171321) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "location_id"
+    t.boolean "good?", default: true
+    t.boolean "happened?", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_171321) do
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
+    t.string "api_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

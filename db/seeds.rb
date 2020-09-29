@@ -14,7 +14,40 @@ def api_call(url)
     json_response = JSON.parse(response.read_body)
 end
 
+# Locations
 
+
+Location.create(id: 1, name: "Northwestern Viridian Forest", api_id: "viridian-forest")
+Location.create(id: 2, name: "Northeaster Viridian Forest", api_id: "viridian-forest")
+Location.create(id: 3, name: "Pokemon Mansion", api_id: "pokemon-mansion")
+Location.create(id: 4, name: "Power Plant", api_id: "power-plant")
+Location.create(id: 5, name: "Lost Ruins", api_id: "ruin-valley")
+
+
+Location.create(id: 6, name: "Western Viridian Forest", api_id: "viridian-forest")
+Location.create(id: 7, name: "Eastern Viridian Forest", api_id: "viridian-forest")
+Location.create(id: 8, name: "Pokemon Tower", api_id: "pokemon-tower")
+Location.create(id: 9, name: "Trainer Tower", api_id: "trainer-tower")
+Location.create(id: 10, name: "Abandoned Road", api_id: "kindle-road")
+
+Location.create(id: 11, name: "Western Road", api_id: "kanto-route-15")
+Location.create(id: 12, name: "Southeastern Viridian Forest", api_id: "viridian-forest")
+Location.create(id: 13, name: "Pallet Town", api_id: "pallet-town")
+Location.create(id: 14, name: "Eastern Road", api_id: "kanto-route-1")
+Location.create(id: 15, name: "Eastern Ruins", api_id: "tanoby-ruins")
+
+
+Location.create(id: 16, name: "Western Cave", api_id: "digletts-cave")
+Location.create(id: 17, name: "Lost Cave", api_id: "lost-cave")
+Location.create(id: 18, name: "Eastern Cave", api_id: "cerulian-cave")
+Location.create(id: 19, name: "Country Road", api_id: "kanto-route-5")
+Location.create(id: 20, name: "Dangerous Cave", api_id: "icefall-cave")
+
+Location.create(id: 21, name: "Western Cave", api_id: "kanto-altering-cave")
+Location.create(id: 22, name: "Lost Cave", api_id: "kanto-altering-cave")
+Location.create(id: 23, name: "Eastern Cave", api_id: "kanto-altering-cave")
+Location.create(id: 24, name: "Eastern Cave", api_id: "kanto-altering-cave")
+Location.create(id: 25, name: "Dangerous Cave", api_id: "kanto-altering-cave")
 
 
 10.times do 
