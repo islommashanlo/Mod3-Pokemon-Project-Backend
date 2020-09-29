@@ -17,19 +17,19 @@ end
 
 
 
-    15.times do 
+    10.times do 
         User.create(name: Faker::Games::Dota.hero)
     end
 
-    i = 1
+    # i = 1
 
-    until i == 10 do
-        poke_name = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["name"]
-        poke_species = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["species"]["name"]
-        poke_img = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["sprites"]["front_default"]
-        Pokemon.create(name: poke_name, species: poke_species, img_url: poke_img, user_id: i)
-        i += 1
-    end
+    # until i == 10 do
+    #     poke_name = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["name"]
+    #     poke_species = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["species"]["name"]
+    #     poke_img = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["sprites"]["front_default"]
+    #     Pokemon.create(name: poke_name, species: poke_species, img_url: poke_img, user_id: i)
+    #     i += 1
+    # end
 
     # Items
 

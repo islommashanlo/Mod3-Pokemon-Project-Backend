@@ -13,8 +13,8 @@ class PokemonsController < ApplicationController
 
     def create
         name = poke_params[:name]
-        species = api_call("pokemon-species/#{poke_params[:species]}/")["name"]
-        img = api_call("pokemon/#{poke_params[:name]/}")["sprites"]["front_default"]
+        species = api_call("pokemon-species/#{poke_params[:species].downcase}/")["name"]
+        img = api_call("pokemon/#{species}")["sprites"]["front_default"]
         user = poke_params[:user_id]
         Pokemon.create(name: name, species: species, img_url: img, user_id: user)
     end

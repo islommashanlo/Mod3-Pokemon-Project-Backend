@@ -27,13 +27,13 @@ ActiveRecord::Schema.define(version: 2020_09_27_171321) do
     t.string "effect"
     t.string "img_url"
     t.string "user_id"
+    t.integer "amount", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "name"
-    t.string "img_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_171321) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.integer "user_hp", default: 100
-    t.integer "user_xp", default: 0
+    t.integer "current_hp", default: 100
+    t.integer "max_hp", default: 100
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
