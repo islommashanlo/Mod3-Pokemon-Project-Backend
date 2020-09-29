@@ -16,11 +16,13 @@ class PokemonsController < ApplicationController
         species = api_call("pokemon-species/#{poke_params[:species].downcase}/")["name"]
         img = api_call("pokemon/#{species}")["sprites"]["front_default"]
         user = poke_params[:user_id]
-        Pokemon.create(name: name, species: species, img_url: img, user_id: user)
+        new_pokemon = Pokemon.create(name: name, species: species, img_url: img, user_id: user)
+        render json: new_pokemon
     end
 
     def update
-        @pokemon.update(poke_params)
+        new_pokemon = @pokemon.update(poke_params)
+        render json: new_pokemon
     end
 
     private 

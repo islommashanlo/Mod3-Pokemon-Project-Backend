@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_171321) do
     t.string "effect"
     t.string "img_url"
     t.string "user_id"
+    t.string "api_id"
     t.integer "amount", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

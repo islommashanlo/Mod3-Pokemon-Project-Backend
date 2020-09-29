@@ -17,9 +17,9 @@ end
 
 
 
-    10.times do 
-        User.create(name: Faker::Games::Dota.hero)
-    end
+10.times do 
+    User.create(name: Faker::Games::Dota.hero)
+end
 
     # i = 1
 
