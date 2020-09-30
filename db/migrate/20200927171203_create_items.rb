@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :effect
       t.string :img_url
-      t.string :user_id
+      t.integer :user_id
       t.string :api_id
       t.integer :amount, default: 1
 

@@ -14,6 +14,8 @@ def api_call(url)
     json_response = JSON.parse(response.read_body)
 end
 
+rand_num = Random.new
+
 # Locations
 
 
@@ -54,17 +56,38 @@ Location.create(id: 25, name: "Dangerous Cave", api_id: "kanto-altering-cave")
     User.create(name: Faker::Games::Dota.hero)
 end
 
-    # i = 1
+i = 1
 
-    # until i == 10 do
-    #     poke_name = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["name"]
-    #     poke_species = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["species"]["name"]
-    #     poke_img = api_call("https://pokeapi.co/api/v2/pokemon/#{i}")["sprites"]["front_default"]
-    #     Pokemon.create(name: poke_name, species: poke_species, img_url: poke_img, user_id: i)
-    #     i += 1
-    # end
+until i == 10 do
+    b = rand_num.rand(30).to_s
+    poke_name = api_call("https://pokeapi.co/api/v2/pokemon/#{b}")["name"]
+    poke_species = api_call("https://pokeapi.co/api/v2/pokemon/#{b}")["species"]["name"]
+    poke_img = api_call("https://pokeapi.co/api/v2/pokemon/#{b}")["sprites"]["front_default"]
+    Pokemon.create(name: poke_name, species: poke_species, img_url: poke_img, user_id: i)
+    i += 1
+end
 
-    # Items
 
-    
-        
+a = 1
+
+until a == 10 do
+    b = rand_num.rand(30).to_s
+    api_id = api_call("https://pokeapi.co/api/v2/item/#{b}")["name"]
+    name = api_call("https://pokeapi.co/api/v2/item/#{b}")["names"][7]["name"]
+    effect = api_call("https://pokeapi.co/api/v2/item/#{b}")["effect_entries"][0]["short_effect"]
+    img = api_call("https://pokeapi.co/api/v2/item/#{b}")["sprites"]["default"]
+
+    c = rand_num.rand(30).to_s
+    api_id_2 = api_call("https://pokeapi.co/api/v2/item/#{c}")["name"]
+    name_2 = api_call("https://pokeapi.co/api/v2/item/#{c}")["names"][7]["name"]
+    effect_2 = api_call("https://pokeapi.co/api/v2/item/#{c}")["effect_entries"][0]["short_effect"]
+    img_2 = api_call("https://pokeapi.co/api/v2/item/#{c}")["sprites"]["default"]
+
+    Item.create(name: name, effect: effect, img_url: img, user_id: a, api_id: api_id)
+
+    Item.create(name: name_2, effect: effect_2, img_url: img_2, user_id: a, api_id: api_id_2)
+    a += 1
+end
+
+
+       
