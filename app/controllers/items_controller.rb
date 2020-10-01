@@ -12,12 +12,12 @@ class ItemsController < ApplicationController
     end
 
     def destroy
-        if @item.amount > 0
+        if @item.amount > 1
             item_amount = @item.amount
             item_amount -= 1
             @item.update(amount: item_amount)
             @item
-        elsif @item.amount == 0
+        elsif @item.amount == 1
             @item.destroy
         else
             puts "Something went wrong"
