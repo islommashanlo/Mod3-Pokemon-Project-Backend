@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
     private
 
     def find_item 
-        @item = Item.find_by(name: item_params[:api_id], user_id: item_params[:user_id].to_i)
+        @item = Item.find_by(api_id: item_params[:api_id], user_id: item_params[:user_id].to_i)
     end
 
     def item_params
