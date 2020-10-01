@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
         render json: @item
     end
     def create
-        if Item.all.any?{|e|e.api_id == item_params[:api_id] && e.user_id == item_params[:user_id]}
+        if Item.all.any?{|e|e.api_id == item_params[:api_id] && e.user_id == item_params[:user_id].to_i}
             item_amount = @item.amount
             item_amount += 1
             @item.update(amount: item_amount)
@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
             effect = api_call("item/#{api_id}")["effect_entries"][0]["short_effect"]
             img = api_call("item/#{api_id}")["sprites"]["default"]
 
-            new_item = Item.create(name: name, effect: effect, img_url: img, user_id: item_params[:user_id], api_id: api_id)
+            new_item = Item.create(name: name, effect: effect, img_url: img, user_id: item_params[:user_id].to_i, api_id: api_id)
             new_item
         end
         render json: new_item
@@ -53,7 +53,7 @@ class ItemsController < ApplicationController
     private
 
     def find_item 
-        @item = Item.find_by(name: item_params[:name], user_id: item_params[:user_id])
+        @item = Item.find_by(name: item_params[:api_id], user_id: item_params[:user_id].to_i)
     end
 
     def item_params
