@@ -20,7 +20,8 @@ ActiveRecord::Schema.define(version: 2020_09_27_171249) do
     t.string "effect"
     t.string "img_url"
     t.integer "user_id"
-    t.string "api_id"
+    t.integer "api_id"
+    t.integer "api_name"
     t.integer "amount", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_09_27_171249) do
     t.string "species"
     t.string "img_url"
     t.integer "user_id"
+    t.integer "api_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

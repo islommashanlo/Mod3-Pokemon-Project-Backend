@@ -11,6 +11,11 @@ class UsersController < ApplicationController
         render json: @user
     end
 
+    def update
+        @user.update(current_hp: user_params[:current_hp])
+        
+    end
+
     def create
         user = User.find_or_create_by(name: user_params[:name].downcase)
         render json: user

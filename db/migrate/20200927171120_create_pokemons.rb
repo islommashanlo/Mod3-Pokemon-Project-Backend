@@ -5,6 +5,7 @@ class CreatePokemons < ActiveRecord::Migration[6.0]
       t.string :species
       t.string :img_url
       t.integer :user_id
+      t.integer :api_id
 
       t.timestamps
     end
