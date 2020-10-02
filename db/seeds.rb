@@ -59,7 +59,7 @@ end
 i = 1
 
 until i == 10 do
-    b = rand_num.rand(30).to_s
+    b = rand_num.rand(100)
     poke_name = api_call("https://pokeapi.co/api/v2/pokemon/#{b}")["name"]
     poke_species = api_call("https://pokeapi.co/api/v2/pokemon/#{b}")["species"]["name"]
     poke_img = api_call("https://pokeapi.co/api/v2/pokemon/#{b}")["sprites"]["front_default"]
@@ -71,13 +71,13 @@ end
 a = 1
 
 until a == 10 do
-    b = rand_num.rand(30).to_s
+    b = rand_num.rand(30)
     api_id = api_call("https://pokeapi.co/api/v2/item/#{b}")["name"]
     name = api_call("https://pokeapi.co/api/v2/item/#{b}")["names"][7]["name"]
     effect = api_call("https://pokeapi.co/api/v2/item/#{b}")["effect_entries"][0]["short_effect"]
     img = api_call("https://pokeapi.co/api/v2/item/#{b}")["sprites"]["default"]
 
-    c = rand_num.rand(30).to_s
+    c = rand_num.rand(30)
     api_id_2 = api_call("https://pokeapi.co/api/v2/item/#{c}")["name"]
     name_2 = api_call("https://pokeapi.co/api/v2/item/#{c}")["names"][7]["name"]
     effect_2 = api_call("https://pokeapi.co/api/v2/item/#{c}")["effect_entries"][0]["short_effect"]
